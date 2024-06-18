@@ -26,17 +26,18 @@ API to be consumed by TaskList Angular-based frontend App, built with Spring Boo
 ## _Screenshot_
 [![](./todo-list.png)]()
 ## _Links_
-- Live Site URL: [https://todo-list.ferreiras.dev.br] 
+- Live Site URL: [https://todo-list.ferreiras.dev.br]
+
 ## _Built with_
-[![My Skills]
-<p align="center">
+
+<p>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=maven,spring,java,mysql,postman,git,github,docker,aws,idea,redhat
-" />
+"  alt="Project Screenshot"/>
   </a>
 </p>
 
- ## _How I am building
+ ## _How I am building_
 ```java
 
 package br.dev.ferreiras.jwt.controllers.handlers;
