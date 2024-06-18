@@ -5,7 +5,7 @@ API to be consumed by TaskList Angular-based frontend App, built with Spring Boo
 - Java 17
 - Spring Boot
 - Spring Security
-- oAuth2
+- OAuth2
 - MySQL
 - IntelliJ Community Edition
 
@@ -26,20 +26,12 @@ API to be consumed by TaskList Angular-based frontend App, built with Spring Boo
 ## _Screenshot_
 [![](./todo-list.png)]()
 ## _Links_
-- Live Site URL: [https://todo-list.ferreiras.dev.br]
-
+- Live Site URL: [https://todo-list.ferreiras.dev.br] 
 ## _Built with_
+[![My Skills](https://skillicons.dev/icons?i=maven,spring,java,mysql,git,github,docker,aws,idea,redhat)](https://skillicons.dev)
 
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=maven,spring,java,mysql,postman,git,github,docker,aws,idea,redhat
-"  alt="Project Screenshot"/>
-  </a>
-</p>
-
- ## _How I am building_
+ ## _How it's been built_
 ```java
-
 package br.dev.ferreiras.jwt.controllers.handlers;
 
 import br.dev.ferreiras.jwt.controllers.dto.CustomError;
@@ -92,6 +84,7 @@ public class ControllerExceptionHandler {
 
 }
 
+
 ``` 
 
 ## _Continued development_
@@ -99,8 +92,10 @@ public class ControllerExceptionHandler {
 - 
 ### _Useful resources_
 - [https://docs.oracle.com/en/java/] Always trust and read the official documentation!
-- [https://spring.io/] trust and read the official documentation!
-- [https://jwt.io/] the place to decode and verify your JWTs
+- [https://spring.io/] Always trust and read the official documentation!
+- [https://jwt.io/] The place to decode and verify your JWT Token
+- [https://www.usebruno.com/] Re-inventing the API Client - Quick and easy!
+
 ## _Author_
 - Website - [https://ferreiras.dev.br] 
 ## Acknowledgments
