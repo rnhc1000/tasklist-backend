@@ -1,4 +1,4 @@
 package br.dev.ferreiras.jwt.controllers.dto;
 
-public record CreateUserDto(String username, String password) {
+public record CreateUserDto(String email, String username, String password ) {
 }

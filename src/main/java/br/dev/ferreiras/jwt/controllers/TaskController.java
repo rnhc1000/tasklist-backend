@@ -5,6 +5,12 @@ import br.dev.ferreiras.jwt.controllers.dto.FeedDto;
 import br.dev.ferreiras.jwt.controllers.dto.FeedItemDto;
 import br.dev.ferreiras.jwt.repository.TaskRepository;
 import br.dev.ferreiras.jwt.repository.UserRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -26,7 +32,7 @@ public class TaskController {
     this.taskRepository = taskRepository;
     this.userRepository = userRepository;
   }
-
+  @Tag (name = "get", description = "GET methods of List of tasks(feed) of an user")
   @GetMapping ("/feed")
   public ResponseEntity<FeedDto> feed(@RequestParam (value = "page", defaultValue = "0") int page,
                                       @RequestParam (value = "pageSize", defaultValue = "10") int pageSize) {
@@ -42,6 +48,8 @@ public class TaskController {
     ));
   }
 
+  @Operation (summary = "Insert a new task",
+          description = "Insert a task in the list with a status of TBD-To Be Done.")
   @PostMapping ("/tasks")
   public ResponseEntity<Void> createTask(@RequestBody CreateTaskDto createTaskDto,
                                          JwtAuthenticationToken accessToken) {
@@ -55,7 +63,11 @@ public class TaskController {
     taskRepository.save(task);
     return ResponseEntity.ok().build();
   }
-
+  @ApiResponses ({
+          @ApiResponse(responseCode = "200", content = { @Content (mediaType = "application/json",
+                  schema = @Schema (implementation = Task.class)) }),
+          @ApiResponse (responseCode = "404", description = "Task not found",
+                  content = @Content) })
   @DeleteMapping ("/tasks/{task_id}")
   public ResponseEntity<Void> deleteTask(@PathVariable ("task_id") Long taskId,
                                          JwtAuthenticationToken accessToken) {

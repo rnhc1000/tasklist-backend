@@ -41,14 +41,14 @@ public class AdminUserConfig implements CommandLineRunner {
     var roleAdmin = roleRepository.findByName(EnumRole.ROLE_ADMIN);
     System.out.println(roleAdmin);
 //    adminRoles.add(roleAdmin);
-    var userAdmin = userRepository.findByUsername("admin");
+    var userAdmin = userRepository.findByUsername("Ricardo Ferreira");
     userAdmin.ifPresentOrElse(
             user -> {
                System.out.println("admin exists");
             },
             () -> {
               var user = new User();
-              user.setUsername("admin");
+              user.setUsername("Ricardo Ferreira");
               user.setPassword(bCryptPasswordEncoder.encode("s0t3cht1"));
               user.setEmail("ricardo@ferreiras.dev.br");
               user.setRoles(Set.of(roleAdmin));

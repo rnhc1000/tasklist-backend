@@ -16,7 +16,8 @@ import java.util.UUID;
 @Table(name = "tb_users",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
-                @UniqueConstraint(columnNames = "password")
+                @UniqueConstraint(columnNames = "password"),
+                @UniqueConstraint(columnNames = "email"),
         })
 public class User {
 
@@ -26,16 +27,16 @@ public class User {
 
   @NotBlank
   @Column(unique = true)
-  @Size (max = 20)
+  @Size (min=4, max = 20)
   private String username;
 
   @NotBlank
   @Email
-  @Size (max = 50)
+  @Size (min=8, max = 40)
   private String email;
 
   @NotBlank
-  @Size (max = 120)
+  @Size (min=6, max = 120)
   private String password;
 
   public User() {
