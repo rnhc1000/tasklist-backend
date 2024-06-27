@@ -1,4 +1,4 @@
-package br.dev.ferreiras.jwt.controllers.dto;
+package br.dev.ferreiras.jwt.dto;
 
 public record LoginResponse(String accessToken, Long expiresIn) {
 }

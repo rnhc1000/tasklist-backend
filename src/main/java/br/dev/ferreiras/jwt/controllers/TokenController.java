@@ -1,8 +1,7 @@
 package br.dev.ferreiras.jwt.controllers;
 
-import br.dev.ferreiras.jwt.controllers.dto.LoginRequest;
-import br.dev.ferreiras.jwt.controllers.dto.LoginResponse;
-import br.dev.ferreiras.jwt.models.Role;
+import br.dev.ferreiras.jwt.dto.LoginRequest;
+import br.dev.ferreiras.jwt.dto.LoginResponse;
 import br.dev.ferreiras.jwt.repository.UserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -14,12 +13,11 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value="/")
-@CrossOrigin ("http://192.168.15.11:7000")
+@CrossOrigin ("http://192.168.15.11:5000")
 public class TokenController {
 
   private final JwtEncoder jwtEncoder;
