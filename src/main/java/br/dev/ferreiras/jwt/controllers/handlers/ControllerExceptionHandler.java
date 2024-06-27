@@ -1,7 +1,7 @@
 package br.dev.ferreiras.jwt.controllers.handlers;
 
-import br.dev.ferreiras.jwt.controllers.dto.CustomError;
-import br.dev.ferreiras.jwt.controllers.dto.ValidationError;
+import br.dev.ferreiras.jwt.dto.CustomError;
+import br.dev.ferreiras.jwt.dto.ValidationError;
 import br.dev.ferreiras.jwt.services.exceptions.DatabaseException;
 import br.dev.ferreiras.jwt.services.exceptions.ForbiddenException;
 import br.dev.ferreiras.jwt.services.exceptions.ResourceNotFoundException;

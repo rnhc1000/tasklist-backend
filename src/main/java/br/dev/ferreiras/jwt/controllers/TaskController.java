@@ -1,8 +1,8 @@
 package br.dev.ferreiras.jwt.controllers;
 
-import br.dev.ferreiras.jwt.controllers.dto.CreateTaskDto;
-import br.dev.ferreiras.jwt.controllers.dto.FeedDto;
-import br.dev.ferreiras.jwt.controllers.dto.FeedItemDto;
+import br.dev.ferreiras.jwt.dto.CreateTaskDto;
+import br.dev.ferreiras.jwt.dto.FeedDto;
+import br.dev.ferreiras.jwt.dto.FeedItemDto;
 import br.dev.ferreiras.jwt.repository.TaskRepository;
 import br.dev.ferreiras.jwt.repository.UserRepository;
 import io.swagger.v3.oas.annotations.Operation;

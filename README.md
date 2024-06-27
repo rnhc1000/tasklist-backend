@@ -31,11 +31,12 @@ API to be consumed by TaskList Angular-based frontend App, built with Spring Boo
 [![My Skills](https://skillicons.dev/icons?i=maven,spring,java,mysql,git,github,docker,aws,idea,redhat)](https://skillicons.dev)
 
  ## _How it's been built_
+
 ```java
 package br.dev.ferreiras.jwt.controllers.handlers;
 
-import br.dev.ferreiras.jwt.controllers.dto.CustomError;
-import br.dev.ferreiras.jwt.controllers.dto.ValidationError;
+import br.dev.ferreiras.jwt.dto.CustomError;
+import br.dev.ferreiras.jwt.dto.ValidationError;
 import br.dev.ferreiras.jwt.services.exceptions.DatabaseException;
 import br.dev.ferreiras.jwt.services.exceptions.ForbiddenException;
 import br.dev.ferreiras.jwt.services.exceptions.ResourceNotFoundException;
@@ -58,14 +59,14 @@ public class ControllerExceptionHandler {
     return ResponseEntity.status(status).body(err);
   }
 
-  @ExceptionHandler(DatabaseException.class)
+  @ExceptionHandler (DatabaseException.class)
   public ResponseEntity<CustomError> database(DatabaseException e, HttpServletRequest request) {
     HttpStatus status = HttpStatus.BAD_REQUEST;
     CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
     return ResponseEntity.status(status).body(err);
   }
 
-  @ExceptionHandler(MethodArgumentNotValidException.class)
+  @ExceptionHandler (MethodArgumentNotValidException.class)
   public ResponseEntity<CustomError> methodArgumentNotValidation(MethodArgumentNotValidException e, HttpServletRequest request) {
     HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
     ValidationError err = new ValidationError(Instant.now(), status.value(), "Dados inválidos", request.getRequestURI());
@@ -75,7 +76,7 @@ public class ControllerExceptionHandler {
     return ResponseEntity.status(status).body(err);
   }
 
-  @ExceptionHandler(ForbiddenException.class)
+  @ExceptionHandler (ForbiddenException.class)
   public ResponseEntity<CustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
     HttpStatus status = HttpStatus.FORBIDDEN;
     CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());

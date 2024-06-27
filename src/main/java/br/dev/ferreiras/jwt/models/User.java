@@ -1,6 +1,6 @@
 package br.dev.ferreiras.jwt.models;
 
-import br.dev.ferreiras.jwt.controllers.dto.LoginRequest;
+import br.dev.ferreiras.jwt.dto.LoginRequest;
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.Email;
